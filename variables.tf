@@ -9,7 +9,7 @@ variable "service_accounts" {
   type = list(object({
     service_account_name = optional(string),
     for_cluster          = optional(bool),
-    role_name            = optional(string) 
+    role_name            = optional(string)
   }))
 }
 

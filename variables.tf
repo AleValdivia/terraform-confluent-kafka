@@ -60,7 +60,7 @@ variable "it_element" {
 variable "labels" {
   description = "labels to vault resources"
   type        = map(string)
-  default = map("")
+  default     = {}
 }
 
 variable "project_id" {

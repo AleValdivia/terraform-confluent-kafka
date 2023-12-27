@@ -3,11 +3,6 @@ variable "environment_id" {
   type        = string
 }
 
-variable "project_id" {
-  description = "The project ID"
-  type        = string
-}
-
 variable "service_accounts" {
   description = "List of service account definitions to apply"
   type = list(object({
@@ -47,6 +42,21 @@ variable "topics" {
 }
 
 variable "kafka_id" {
+  type        = string
+  default = ""
+}
+
+variable "this_yaml" {
+  type        = string
+  default = ""
+}
+
+variable "environment" {
+  type        = string
+  default = ""
+}
+
+variable "it_element" {
   type        = string
   default = ""
 }

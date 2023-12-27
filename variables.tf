@@ -1,5 +1,5 @@
-variable "environment_id" {
-  description = "The ID of the environment"
+variable "kafka_environment_id" {
+  description = "The ID of the environment in kafka"
   type        = string
 }
 
@@ -38,21 +38,21 @@ variable "topics" {
 }
 
 variable "kafka_id" {
+  description = "The ID of the cluster in kafka"
   type        = string
-  default = ""
 }
 
 variable "this_yaml" {
+  description = "The values to apply in the terragrunt"
   type        = string
-  default = ""
 }
 
 variable "environment" {
+  description = "The development enviroment"
   type        = string
-  default = ""
 }
 
 variable "it_element" {
+  description = "The it element for cmdb"
   type        = string
-  default = ""
 }

@@ -5,6 +5,7 @@ variable "environment_id" {
 
 variable "service_accounts" {
   description = "List of service account definitions to apply"
+  default     = []
   type = list(object({
     service_account_name = optional(string),
     for_cluster          = optional(bool),
@@ -28,11 +29,6 @@ variable "managed_resource_kind" {
   description = "A kind of the managed resource"
   type        = string
   default     = "Cluster"
-}
-
-variable "labels" {
-  description = "labels to vault resources"
-  type        = map(string)
 }
 
 variable "topics" {

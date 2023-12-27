@@ -35,7 +35,7 @@ resource "confluent_api_key" "service_account_kafka_api_key" {
     kind        = var.managed_resource_kind
 
     environment {
-      id = var.environment_id
+      id = var.kafka_environment_id
     }
   }
 

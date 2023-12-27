@@ -9,7 +9,7 @@ variable "service_accounts" {
   type = list(object({
     service_account_name = optional(string),
     for_cluster          = optional(bool),
-    role_name            = optional(string)
+    role_name            = optional(string) 
   }))
 }
 
@@ -54,5 +54,16 @@ variable "environment" {
 
 variable "it_element" {
   description = "The it element for cmdb"
+  type        = string
+}
+
+variable "labels" {
+  description = "labels to vault resources"
+  type        = map(string)
+  default     = ""
+}
+
+variable "project_id" {
+  description = "The GCP project ID"
   type        = string
 }

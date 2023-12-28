@@ -14,7 +14,7 @@ locals {
 
   topics = [
     for topic in local.this.topics : {
-      topic_name = "${local.this.it_element}-${var.environment}-${topic.topic_name}"
+      topic_name = "${var.it_element}-${var.environment}-${topic.topic_name}"
       acls       = [
         for acl in topic.acls : {
           service_account_name = "${var.it_element}-${var.environment}-${acl.service_account_name}"

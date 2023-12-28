@@ -18,15 +18,26 @@ locals {
       acls       = [
         for acl in topic.acls : {
           service_account_name = "${var.it_element}-${var.environment}-${acl.service_account_name}"
-          # Add other ACL properties here
         }
       ]
       cgs        = [
         for cg in topic.cgs : {
           service_account_name = "${var.it_element}-${var.environment}-${cg.service_account_name}"
-          # Add other CG properties here
         }
       ]
     }
   ]
+}
+
+module "service-accounts" {
+  source = "./service-accounts.tf"
+}
+
+module "topics" {
+  source = "./topics.tf"
+}
+
+
+module "acl" {
+  source = "./acl.tf"
 }

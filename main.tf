@@ -4,7 +4,7 @@ provider "confluent" {
 locals {
   kafka_sa_environment = var.environment == "cert" ? "intg" : var.environment
 
-  this = var.this_yaml
+  this = yamldecode(var.this_yaml)
 
   sa = [
     for name in local.this.service_accounts : {

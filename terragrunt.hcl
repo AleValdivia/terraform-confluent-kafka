@@ -18,17 +18,15 @@
 }
 
 inputs = merge(
-  local.common_vars,
   local.this,
   {
     labels = {
-      app      = "${lower(local.common_vars.bitbucket_key)}-${var.environment}"
-      project  = local.common_vars.project_id
+      app      = "${var.it_element}-${var.environment}"
+      project  = var.project_id
       platform = "confluent"
       resource = "service_acount"
     },
-    project_id       = local.sm
-    secret_name      = "${local.this.kafka_id}-${local.kafka_sa_environment}-sa"
+    secret_name      = "${var.kafka_id}-${local.kafka_sa_environment}-sa"
     service_accounts = local.sa
     topics           = local.topics
   }
